@@ -1,7 +1,7 @@
 /*
-Open/Closed principle: OCP
-Entidades devem estar abertas para extensão, mas fechadas
-para modificação.
+Liskov substitution principle
+Se meu programa espera um Animal, algo do tipo Cachorro
+(que herda de Animal) deve servir como qqr outro animal.
 */
 import { Messaging } from './services/messaging';
 import { Order } from './classes/order';
@@ -13,7 +13,7 @@ import { FiftyDiscount, NoDiscount, TenDiscount } from './classes/discount';
 const fiftyDiscount = new FiftyDiscount();
 const tenDiscount = new TenDiscount();
 const noDiscount = new NoDiscount();
-const cartOne = new ShoppingCart(fiftyDiscount);
+const cartOne = new ShoppingCart(noDiscount);
 const messaging = new Messaging();
 const persistency = new Persistency();
 const order = new Order(cartOne, messaging, persistency);

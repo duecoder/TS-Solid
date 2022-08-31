@@ -31,6 +31,7 @@ export class ShoppingCartLegacy {
   checkOut(): void {
     if (this.isEmpty()) {
       console.log('Your cart is empty.');
+      return;
     }
 
     this._orderStatus = 'closed';
@@ -60,9 +61,9 @@ export class ShoppingCartLegacy {
 }
 
 const cartOne = new ShoppingCartLegacy();
-cartOne.addItem({ name: 'Shirt', price: 49.95 });
-cartOne.addItem({ name: 'Pencil', price: 9.932 });
-cartOne.addItem({ name: 'Shorts', price: 89.923 });
+// cartOne.addItem({ name: 'Shirt', price: 49.95 });
+// cartOne.addItem({ name: 'Pencil', price: 9.932 });
+// cartOne.addItem({ name: 'Shorts', price: 89.923 });
 
 // cartOne.clear();
 
